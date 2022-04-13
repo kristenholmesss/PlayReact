@@ -1,49 +1,13 @@
-import React, { Component } from "react";
+componentDidMount() {
 
-import { render } from "react-dom";
-//h
+    if ("geolocation" in navigator) {
 
-class App extends Component {
+      console.log("Available");
 
-  constructor(props) {
+    } else {
 
-    super(props);
+      console.log("Not Available");
 
-    this.state = {
-
-    };
+    }
 
   }
-
-
-  componentDidMount() {
-
-    navigator.geolocation.getCurrentPosition(function(position) {
-
-      console.log("Latitude is :", position.coords.latitude);
-
-      console.log("Longitude is :", position.coords.longitude);
-
-    });
-
-  }
-
-
-  render() {
-
-    return (
-
-      <div>
-
-        <h4>Using geolocation JavaScript API in React</h4>
-
-      </div>
-
-    );
-
-  }
-
-}
-
-
-render(<App />, document.getElementById("root"));

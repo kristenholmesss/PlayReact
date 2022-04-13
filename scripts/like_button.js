@@ -23,3 +23,16 @@ class LikeButton extends React.Component {
 
 const domContainer = document.querySelector('#like_button_container');
 ReactDOM.render(e(LikeButton), domContainer);
+componentDidMount() {
+
+    if ("geolocation" in navigator) {
+
+      console.log("Available");
+
+    } else {
+
+      console.log("Not Available");
+
+    }
+
+  }
